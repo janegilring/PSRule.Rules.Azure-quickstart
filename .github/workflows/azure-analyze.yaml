@@ -27,7 +27,6 @@ jobs:
   analyze:
     name: Analyze repository
     runs-on: ubuntu-latest
-    if: github.repository != 'Azure/PSRule.Rules.Azure-quickstart'
     steps:
       - name: Checkout
         uses: actions/checkout@v3
