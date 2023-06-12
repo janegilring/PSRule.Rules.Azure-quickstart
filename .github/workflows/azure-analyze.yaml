@@ -31,6 +31,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
+      - name: Setup Bicep
+        uses: anthony-c-martin/setup-bicep@v0.1
+        with:
+          # must be a version listed under https://github.com/Azure/bicep/releases
+          version: v0.16.2
+
       # Run analysis by using the PSRule GitHub action.
       - name: Run PSRule analysis
         uses: microsoft/ps-rule@v2.8.1
