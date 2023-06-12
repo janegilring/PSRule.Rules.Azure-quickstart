@@ -31,9 +31,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Remove Node warning messages from Bicep install
-        run: echo "::remove-matches::^::Node"
-
       - name: Setup Bicep
         uses: anthony-c-martin/setup-bicep@v0.1
         continue-on-error: true
