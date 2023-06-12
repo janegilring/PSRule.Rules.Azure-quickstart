@@ -31,15 +31,15 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
+      - name: Remove Node warning messages from Bicep install
+        run: echo "::remove-matches::^::Node"
+
       - name: Setup Bicep
         uses: anthony-c-martin/setup-bicep@v0.1
         continue-on-error: true
         with:
           # must be a version listed under https://github.com/Azure/bicep/releases
           version: v0.16.2
-          
-      - name: Remove warning Node warning messages from Bicep install
-        run: echo "::remove-matches::^::Node"
 
 # Run analysis by using the PSRule GitHub action.
       - name: Run PSRule analysis
