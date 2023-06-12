@@ -41,5 +41,17 @@ jobs:
 # Run analysis by using the PSRule GitHub action.
       - name: Run PSRule analysis
         uses: microsoft/ps-rule@v2.8.1
+        
         with:
           modules: PSRule.Rules.Azure
+          outputFormat: Sarif
+          outputPath: reports/ps-rule-results.sarif
+
+      - name: Upload SARIF file
+        uses: github/codeql-action/upload-sarif@v2
+        with:
+          # Path to SARIF file relative to the root of the repository
+          sarif_file: reports/ps-rule-results.sarif
+          # Optional category for the results
+          # Used to differentiate multiple results for one commit
+          category: PSRule
