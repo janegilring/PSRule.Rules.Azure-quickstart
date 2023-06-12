@@ -37,8 +37,11 @@ jobs:
         with:
           # must be a version listed under https://github.com/Azure/bicep/releases
           version: v0.16.2
+          
+      - name: Remove warning Node warning messages from Bicep install
+        run: echo "::remove-matches::^::Node"
 
-      # Run analysis by using the PSRule GitHub action.
+# Run analysis by using the PSRule GitHub action.
       - name: Run PSRule analysis
         uses: microsoft/ps-rule@v2.8.1
         with:
