@@ -33,6 +33,7 @@ jobs:
 
       - name: Setup Bicep
         uses: anthony-c-martin/setup-bicep@v0.1
+        continue-on-error: true
         with:
           # must be a version listed under https://github.com/Azure/bicep/releases
           version: v0.16.2
