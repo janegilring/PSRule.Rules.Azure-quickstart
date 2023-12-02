@@ -59,7 +59,7 @@ execution:
 
 # Suppression ignores rules for a specific Azure resource by name.
 suppression:
-  Azure.KeyVault.Logs:
+#  Azure.KeyVault.Logs:
 #    - kvtest001
   Azure.Storage.BlobPublicAccess:
     - sttest001
