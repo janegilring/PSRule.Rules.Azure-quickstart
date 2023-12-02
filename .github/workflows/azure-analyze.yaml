@@ -42,7 +42,7 @@ jobs:
         continue-on-error: true
         with:
           # must be a version listed under https://github.com/Azure/bicep/releases
-          version: v0.18.4
+          version: v0.23.1
           
 # Run analysis by using the PSRule GitHub action.
       - name: Run PSRule analysis
